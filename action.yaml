@@ -8,7 +8,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: curl -LJO https://github.com/OpenVPN/easy-rsa/releases/download/v${{ env.easy-rsa-version }}/EasyRSA-${{ env.easy-rsa-version }}.tgz
+    - run: curl -LJO https://github.com/OpenVPN/easy-rsa/releases/download/v${{ inputs.version }}/EasyRSA-${{ inputs.version }}.tgz
       shell: bash
-    - run: mkdir easy-rsa && tar xzf EasyRSA-${{ env.easy-rsa-version }}.tgz -C easy-rsa --strip-components 1
+    - run: mkdir easy-rsa && tar xzf EasyRSA-${{ inputs.version }}.tgz -C easy-rsa --strip-components 1
       shell: bash
