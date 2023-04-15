@@ -1,0 +1,14 @@
+name: setup-easy-rsa
+description: Setup easy-rsa in your runner
+
+inputs:
+  version:
+    description: The version of easy-rsa
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: curl -LJO https://github.com/OpenVPN/easy-rsa/releases/download/v${{ env.easy-rsa-version }}/EasyRSA-${{ env.easy-rsa-version }}.tgz
+      shell: bash
+    - run: mkdir easy-rsa && tar xzf EasyRSA-${{ env.easy-rsa-version }}.tgz -C easy-rsa --strip-components 1
+      shell: bash
