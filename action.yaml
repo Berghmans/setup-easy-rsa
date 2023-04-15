@@ -12,3 +12,5 @@ runs:
       shell: bash
     - run: mkdir easy-rsa && tar xzf EasyRSA-${{ inputs.version }}.tgz -C easy-rsa --strip-components 1
       shell: bash
+    - run: rm EasyRSA-${{ inputs.version }}.tgz
+      shell: bash
